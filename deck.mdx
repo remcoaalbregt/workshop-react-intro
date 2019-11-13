@@ -1,0 +1,109 @@
+import { LiveCode } from 'mdx-deck-live-code';
+import { Head, Appear } from 'mdx-deck'
+
+<Head>
+  <title>Workshop introductie React</title>
+  <style>
+    {`[title="Previous Slide"],
+    [title="Next Slide"] {
+      display: none;
+    }`}
+  </style>
+</Head>
+
+# Workshop introductie React
+
+---
+    
+## Wat leer je in deze workshop?
+- De basisprincipes van React.
+- Hoe je een nieuw project opzet.
+- Handvatten om zelf aan de slag te gaan.
+
+---
+
+## Wat is ReactJS
+
+---
+
+### Declarative
+
+---
+
+### Component-based
+
+---
+
+## JSX-Syntax
+
+---
+
+<LiveCode
+  size="large"
+  providerProps={{
+    noInline: true,
+  }}
+  title="ReactJS"
+  code={require('!raw-loader!./examples/react.js')}
+/>
+
+```notes
+- Prop aanpassen
+- Functie verkleinen
+```
+
+---
+
+## Class vs Functional components
+
+---
+
+## Composition
+- Herbruikbaarheid van componenten
+- Snel een nieuw display component opzetten
+- Werkt met class- en functional components
+
+---
+
+### Children
+
+---
+
+### Slots
+
+---
+
+## State
+
+```notes
+- Voor of tijdens hands-on gedeelte?
+```
+
+---
+
+## Zelf aan de slag
+- Todo-applicatie
+- Lijst met todo's weergeven
+- Todo's kunnen toevoegen, afvinken en verwijderen
+
+---
+
+## Create React app
+```
+$ npx create-react-app react-workshop
+$ cd react-workshop
+$ npm start
+```
+
+---
+
+## Hoe nu verder?
+- State en UI scheiden
+- Server side rendering
+- Unit tests
+- Typescript
+
+---
+
+- Link naar slides
+- Link naar repo
