@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<style>*{box-sizing:border-box}body{font-family:system-ui,sans-serif;margin:0}</style>
+<meta name='generator' content='mdx-deck'>
+<title data-head="true">Workshop introductie React</title><style data-head="true">[title=&quot;Previous Slide&quot;],
+    [title=&quot;Next Slide&quot;] {
+      display: none;
+    }</style><style data-styled="cdNsXz eIhpmh iJsiAg eyUBso kfwTvB hhOokc wJUqW flYqAW Zzzy bLgNgG hjtrqD jxJkyO cOffQW pgXdG ehvKwj iGLybX doJaZM dglnia gUKKmP eYrBlB bdHLLh bURACn jucmbo bENqf" data-styled-version="4.4.1">
+/* sc-component-id: Flex-sc-1wyx7c4-0 */
+.eYrBlB{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin-bottom:8px;margin-left:auto;margin-right:auto;} @media print{.eYrBlB{display:none;}}
+/* sc-component-id: Dots__Dot-m5ie3q-0 */
+.bdHLLh{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:4px solid transparent;background-clip:padding-box;border-radius:9999px;width:8px;height:8px;color:inherit;opacity:0.5;margin:0px;padding:4px;color:#000;background-color:#000;} .bdHLLh:focus{outline:none;box-shadow:0 0 0 1px;}.bURACn{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:4px solid transparent;background-clip:padding-box;border-radius:9999px;width:8px;height:8px;color:inherit;opacity:0.125;margin:0px;padding:4px;color:#000;background-color:#000;} .bURACn:focus{outline:none;box-shadow:0 0 0 1px;}
+/* sc-component-id: Provider__Bottom-sc-1iqnegd-0 */
+.gUKKmP{position:fixed;left:0;right:0;bottom:0;}
+/* sc-component-id: sc-bdVaJa */
+.jucmbo{cursor:pointer;width:64px;height:100vh;position:fixed;top:0;left:0;bottom:0;}
+/* sc-component-id: sc-bwzfXH */
+.bENqf{cursor:pointer;width:64px;height:100vh;position:fixed;top:0;right:0;bottom:0;}
+/* sc-component-id: Carousel__CarouselRoot-sc-1sjk1xy-0 */
+.eIhpmh{overflow-x:hidden;width:100%;height:100%;} @media print{.eIhpmh{height:auto;overflow-x:visible;}}
+/* sc-component-id: Carousel__CarouselInner-sc-1sjk1xy-1 */
+.iJsiAg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;height:100%;-webkit-transition-property:-webkit-transform;-webkit-transition-property:transform;transition-property:transform;-webkit-transition-timing-function:ease-out;transition-timing-function:ease-out;-webkit-transition-duration:.3s;transition-duration:.3s;-webkit-transform:translate3d(0%,0,0);-ms-transform:translate3d(0%,0,0);transform:translate3d(0%,0,0);} @media print{.iJsiAg{height:auto;display:block;}}
+/* sc-component-id: Slide__Root-sc-1lv2mpt-0 */
+.eyUBso{-webkit-flex:none;-ms-flex:none;flex:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;overflow:hidden;width:100%;height:100%;padding-left:32px;padding-right:32px;} @media print{.eyUBso{width:100vw;height:100vh;page-break-after:always;page-break-inside:avoid;-webkit-print-color-adjust:exact;}} @media screen and (min-width:40em){.eyUBso{padding-left:64px;padding-right:64px;}} @media screen and (min-width:52em){.eyUBso{padding-left:128px;padding-right:128px;}}
+/* sc-component-id: Root-sc-14f5wl6-0 */
+.cdNsXz{font-family:system-ui,sans-serif;font-size:16px;text-align:center;width:100vw;height:100vh;color:#000;background-color:white;} @media print{.cdNsXz{font-size:24px;height:auto;}} @media screen and (min-width:64em){.cdNsXz{font-size:32px;}} .cdNsXz li > ul,.cdNsXz li > ol{font-size:inherit;} .cdNsXz li > p{font-size:inherit;margin:0;}
+/* sc-component-id: sc-fjdhpX */
+.kfwTvB{line-height:1.25;font-size:3em;}
+/* sc-component-id: sc-jzJRlG */
+.hhOokc{line-height:1.25;font-size:2em;}
+/* sc-component-id: sc-cSHVUG */
+.Zzzy{line-height:1.25;font-size:1.5em;}
+/* sc-component-id: components__p-mhn4yb-2 */
+.bLgNgG{font-size:1.5em;}
+/* sc-component-id: components__ul-mhn4yb-3 */
+.wJUqW{text-align:left;font-size:1.5em;text-align:left;}
+/* sc-component-id: components__Pre-mhn4yb-7 */
+.dglnia{font-family:Menlo,monospace;text-align:left;white-space:pre-wrap;font-size:1em;margin:0px;padding:8px;color:#f0f;background-color:#333;}
+/* sc-component-id: sc-ckVGcZ */
+.iGLybX{height:100%;max-height:100vh;overflow:auto;font-size:0.7em;width:100%;padding-bottom:5rem !important;}
+/* sc-component-id: sc-jKJlTe */
+.hjtrqD{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:1em;width:100vw;height:100vh;}.jxJkyO{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:1em;width:80vw;height:90vh;}
+/* sc-component-id: sc-eNQAEJ */
+.cOffQW{width:100%;height:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;box-shadow:0 2px 10px 0 rgba(0,0,0,0.5);border-radius:0.25rem;}
+/* sc-component-id: sc-hMqMXs */
+.pgXdG{width:50%;background:white;}
+/* sc-component-id: sc-kEYyzF */
+.ehvKwj{width:50%;}
+/* sc-component-id: sc-kkGfuU */
+.doJaZM{position:absolute;bottom:0;width:100%;padding:0.125em;background:#280000;border:2px solid #5c0000;color:#ff8080;font-family:monospace;font-size:0.75em;height:5rem;overflow-y:auto;resize:vertical;}</style>
+</head>
+<body>
+<div id=root><div><div mode="NORMAL" step="0" width="100vw" height="100vh" color="text" class="Root-sc-14f5wl6-0 cdNsXz"><div class="Carousel__CarouselRoot-sc-1sjk1xy-0 eIhpmh"><div class="Carousel__CarouselInner-sc-1sjk1xy-1 iJsiAg"><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><h1 font-size="4" class="components__Heading-mhn4yb-0-h1 sc-fjdhpX kfwTvB">Workshop introductie React</h1></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><h2 font-size="3" class="components__Heading-mhn4yb-0-h2 sc-jzJRlG hhOokc">Wat leer je in deze workshop?</h2><ul font-size="2" class="components__ul-mhn4yb-3 wJUqW"><li class="components__li-mhn4yb-5 flYqAW">De basisprincipes van React.</li><li class="components__li-mhn4yb-5 flYqAW">Hoe je een nieuw project opzet.</li><li class="components__li-mhn4yb-5 flYqAW">Handvatten om zelf aan de slag te gaan.</li></ul></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><h2 font-size="3" class="components__Heading-mhn4yb-0-h2 sc-jzJRlG hhOokc">Wat is React?</h2><ul style="visibility:hidden"><li>A JavaScript library for building user interfaces</li></ul></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><h3 font-size="2" class="components__Heading-mhn4yb-0-h3 sc-cSHVUG Zzzy">Declarative</h3><p font-size="2" class="components__p-mhn4yb-2 bLgNgG">React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.</p><p font-size="2" class="components__p-mhn4yb-2 bLgNgG">Declarative views make your code more predictable and easier to debug.</p></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><h3 font-size="2" class="components__Heading-mhn4yb-0-h3 sc-cSHVUG Zzzy">Component-based</h3><p font-size="2" class="components__p-mhn4yb-2 bLgNgG">Build encapsulated components that manage their own state, then compose them to make complex UIs.</p><p font-size="2" class="components__p-mhn4yb-2 bLgNgG">Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.</p></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><h2 font-size="3" class="components__Heading-mhn4yb-0-h2 sc-jzJRlG hhOokc">JSX-Syntax</h2></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><div class="react-live"><style>
+.prism-code {
+  display: block;
+  white-space: pre;
+
+  background-color: #1D1F21;
+  color: #C5C8C6;
+
+  padding: 0.5rem;
+  margin: 0;
+
+  box-sizing: border-box;
+  vertical-align: baseline;
+  outline: none;
+  text-shadow: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  word-wrap: normal;
+  word-break: normal;
+  text-align: left;
+  word-spacing: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: hsl(30, 20%, 50%);
+}
+
+.token.punctuation {
+  opacity: .7;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: hsl(350, 40%, 70%);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: hsl(75, 70%, 60%);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: hsl(40, 90%, 60%);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: hsl(350, 40%, 70%);
+}
+
+.token.regex,
+.token.important {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.deleted {
+  color: red;
+}
+</style><div class="sc-jKJlTe hjtrqD"><p>JSX Syntax</p><div class="sc-eNQAEJ cOffQW"><div class="react-live-preview sc-hMqMXs pgXdG"><p>Hello World</p></div><div class="sc-kEYyzF ehvKwj"><pre class="prism-code sc-ckVGcZ iGLybX" spellcheck="false" contenteditable="true"><span class="token keyword">const</span> Component <span class="token operator">=</span> props <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>props<span class="token punctuation">.</span>text<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Component</span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Hello</span> <span class="token attr-name">World"</span> <span class="token punctuation">/></span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></div></div></div></div></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><h2 font-size="3" class="components__Heading-mhn4yb-0-h2 sc-jzJRlG hhOokc">Class vs Functional components</h2></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><h2 font-size="3" class="components__Heading-mhn4yb-0-h2 sc-jzJRlG hhOokc">Composition</h2><ul font-size="2" class="components__ul-mhn4yb-3 wJUqW"><li class="components__li-mhn4yb-5 flYqAW">Herbruikbaarheid van componenten</li><li class="components__li-mhn4yb-5 flYqAW">Snel een nieuw display component opzetten</li><li class="components__li-mhn4yb-5 flYqAW">Werkt met class- en functional components</li></ul></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><div class="react-live"><style>
+.prism-code {
+  display: block;
+  white-space: pre;
+
+  background-color: #1D1F21;
+  color: #C5C8C6;
+
+  padding: 0.5rem;
+  margin: 0;
+
+  box-sizing: border-box;
+  vertical-align: baseline;
+  outline: none;
+  text-shadow: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  word-wrap: normal;
+  word-break: normal;
+  text-align: left;
+  word-spacing: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: hsl(30, 20%, 50%);
+}
+
+.token.punctuation {
+  opacity: .7;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: hsl(350, 40%, 70%);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: hsl(75, 70%, 60%);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: hsl(40, 90%, 60%);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: hsl(350, 40%, 70%);
+}
+
+.token.regex,
+.token.important {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.deleted {
+  color: red;
+}
+</style><div class="sc-jKJlTe jxJkyO"><p>Children</p><div class="sc-eNQAEJ cOffQW"><div class="react-live-preview sc-hMqMXs pgXdG"><button>Click me</button></div><div class="sc-kEYyzF ehvKwj"><pre class="prism-code sc-ckVGcZ iGLybX" spellcheck="false" contenteditable="true"><span class="token keyword">const</span> Button <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> children <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>
+  <span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span><span class="token punctuation">></span></span>Click me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre></div></div></div></div></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><div class="react-live"><style>
+.prism-code {
+  display: block;
+  white-space: pre;
+
+  background-color: #1D1F21;
+  color: #C5C8C6;
+
+  padding: 0.5rem;
+  margin: 0;
+
+  box-sizing: border-box;
+  vertical-align: baseline;
+  outline: none;
+  text-shadow: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  word-wrap: normal;
+  word-break: normal;
+  text-align: left;
+  word-spacing: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: hsl(30, 20%, 50%);
+}
+
+.token.punctuation {
+  opacity: .7;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: hsl(350, 40%, 70%);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: hsl(75, 70%, 60%);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: hsl(40, 90%, 60%);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: hsl(350, 40%, 70%);
+}
+
+.token.regex,
+.token.important {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.deleted {
+  color: red;
+}
+</style><div class="sc-jKJlTe jxJkyO"><p>Slots</p><div class="sc-eNQAEJ cOffQW"><div class="react-live-preview sc-hMqMXs pgXdG"><button>Click me</button></div><div class="sc-kEYyzF ehvKwj"><pre class="prism-code sc-ckVGcZ iGLybX" spellcheck="false" contenteditable="true"><span class="token keyword">const</span> LoadingIndicator <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span><span class="token operator">*</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> Button <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> children <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token punctuation">;</span>
+
+<span class="token function">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span><span class="token punctuation">></span></span>Click me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre></div></div></div></div></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><h2 font-size="3" class="components__Heading-mhn4yb-0-h2 sc-jzJRlG hhOokc">State</h2></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><h2 font-size="3" class="components__Heading-mhn4yb-0-h2 sc-jzJRlG hhOokc">Zelf aan de slag</h2><h3 font-size="2" class="components__Heading-mhn4yb-0-h3 sc-cSHVUG Zzzy">Developers profielschets-tool bouwen</h3><ul font-size="2" class="components__ul-mhn4yb-3 wJUqW"><li class="components__li-mhn4yb-5 flYqAW">Vaste lijst met vaardigheden tonen</li><li class="components__li-mhn4yb-5 flYqAW">Vaardigheden kunnen selecteren uit bestaande lijst</li><li class="components__li-mhn4yb-5 flYqAW">Eigen vaardigheden kunnen toevoegen &amp; selecteren</li></ul></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><h2 font-size="3" class="components__Heading-mhn4yb-0-h2 sc-jzJRlG hhOokc">Create React app</h2><pre font-size="1" color="pre" class="components__Pre-mhn4yb-7 dglnia">$ npx create-react-app react-workshop
+$ cd react-workshop
+$ npm start
+</pre></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><h2 font-size="3" class="components__Heading-mhn4yb-0-h2 sc-jzJRlG hhOokc">Hoe nu verder?</h2><ul font-size="2" class="components__ul-mhn4yb-3 wJUqW"><li class="components__li-mhn4yb-5 flYqAW">State en UI scheiden</li><li class="components__li-mhn4yb-5 flYqAW">Server side rendering</li><li class="components__li-mhn4yb-5 flYqAW">Unit tests</li><li class="components__li-mhn4yb-5 flYqAW">Typescript</li></ul></div></div><div class="Slide__Root-sc-1lv2mpt-0 eyUBso"><div><ul font-size="2" class="components__ul-mhn4yb-3 wJUqW"><li class="components__li-mhn4yb-5 flYqAW">Link naar slides</li><li class="components__li-mhn4yb-5 flYqAW">Link naar repo</li></ul></div></div></div></div></div></div><div class="Provider__Bottom-sc-1iqnegd-0 gUKKmP"><div class="Flex-sc-1wyx7c4-0 eYrBlB"><button title="go to: 0" color="text" class="Dots__Dot-m5ie3q-0 bdHLLh"></button><button title="go to: 1" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 2" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 3" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 4" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 5" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 6" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 7" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 8" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 9" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 10" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 11" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 12" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 13" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 14" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button><button title="go to: 15" color="text" class="Dots__Dot-m5ie3q-0 bURACn"></button></div></div><div role="button" title="Previous Slide" class="Provider__Button-sc-1iqnegd-1 sc-bdVaJa jucmbo"></div><div role="button" title="Next Slide" class="Provider__Button-sc-1iqnegd-1 sc-bwzfXH bENqf"></div></div>
+<script src="main.js"></script>
+</body>
+</html>
