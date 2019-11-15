@@ -22,15 +22,26 @@ import { Head, Appear } from 'mdx-deck'
 
 ---
 
-## Wat is ReactJS
+## Wat is React?
+<Appear>
+    <ul>
+        <li>A JavaScript library for building user interfaces</li>
+    </ul>
+</Appear>
 
 ---
 
 ### Declarative
+React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+
+Declarative views make your code more predictable and easier to debug.
 
 ---
 
 ### Component-based
+Build encapsulated components that manage their own state, then compose them to make complex UIs.
+
+Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
 
 ---
 
@@ -43,7 +54,7 @@ import { Head, Appear } from 'mdx-deck'
   providerProps={{
     noInline: true,
   }}
-  title="ReactJS"
+  title="JSX Syntax"
   code={require('!raw-loader!./examples/react.js')}
 />
 
@@ -65,26 +76,38 @@ import { Head, Appear } from 'mdx-deck'
 
 ---
 
-### Children
+<LiveCode
+  size="medium"
+  providerProps={{
+    noInline: true,
+  }}
+  title="Children"
+  code={require('!raw-loader!./examples/children.js')}
+/>
 
 ---
 
-### Slots
+<LiveCode
+  size="medium"
+  providerProps={{
+    noInline: true,
+  }}
+  title="Slots"
+  code={require('!raw-loader!./examples/slots.js')}
+/>
 
 ---
 
 ## State
 
-```notes
-- Voor of tijdens hands-on gedeelte?
-```
 
 ---
 
 ## Zelf aan de slag
-- Todo-applicatie
-- Lijst met todo's weergeven
-- Todo's kunnen toevoegen, afvinken en verwijderen
+### Developers profielschets-tool bouwen
+- Vaste lijst met vaardigheden tonen
+- Vaardigheden kunnen selecteren uit bestaande lijst
+- Eigen vaardigheden kunnen toevoegen & selecteren
 
 ---
 
