@@ -5,11 +5,17 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "mdx-deck deck.mdx"
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist -b gh-pages"
   },
   "devDependencies": {
     "mdx-deck": "^1.10.0",
     "mdx-deck-live-code": "^1.0.1",
     "raw-loader": "^1.0.0"
+  },
+  "dependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
