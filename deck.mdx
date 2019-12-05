@@ -46,6 +46,11 @@ Since component logic is written in JavaScript instead of templates, you can eas
 ---
 
 ## JSX-Syntax
+<Appear>
+    <ul>
+        <li>Javascript en templates, in één</li>
+    </ul>
+</Appear>
 
 ---
 
@@ -65,7 +70,46 @@ Since component logic is written in JavaScript instead of templates, you can eas
 
 ---
 
-## Class vs Functional components
+## Class vs Functional components (FC)
+- Classes hebben `this`
+- Classes hebben lifecycle methods, FC hebben hooks
+- Iedere class zorgt voor ~ 1kb aan extra transpiled code
+
+
+---
+
+## State
+- Data specifiek voor een component
+- State kan op ieder moment wijzigen
+- Behandel state alsof het immutable is, alleen wijzigen met `setState()`
+
+---
+
+<LiveCode
+  size="large"
+  providerProps={{
+    noInline: true,
+  }}
+  title="Class components, setState"
+  code={require('!raw-loader!./examples/setstate.js')}
+/>
+
+---
+
+<LiveCode
+  size="large"
+  providerProps={{
+    noInline: true,
+  }}
+  title="Functional component, state hook"
+  code={require('!raw-loader!./examples/state-hook.js')}
+/>
+
+---
+
+## Rendering
+- Componenten doen een rerender wanneer de state (buiten het component) wijzigt.
+- Alleen wanneer de output veranderd zal een DOM-update plaatsvinden.
 
 ---
 
@@ -98,11 +142,6 @@ Since component logic is written in JavaScript instead of templates, you can eas
 
 ---
 
-## State
-
-
----
-
 ## Zelf aan de slag
 ### Developers profielschets-tool bouwen
 - Vaste lijst met vaardigheden tonen
@@ -128,5 +167,5 @@ $ npm start
 
 ---
 
-- Link naar slides
-- Link naar repo
+- Slides: http://remcoaalbregt.github.io/workshop-react-intro
+- Repo: https://github.com/remcoaalbregt/workshop-react-intro
