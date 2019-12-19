@@ -1,5 +1,5 @@
 import { LiveCode } from 'mdx-deck-live-code';
-import { Head, Appear } from 'mdx-deck'
+import { Head, Appear, Image } from 'mdx-deck';
 
 <Head>
   <title>Workshop introductie React</title>
@@ -32,8 +32,6 @@ import { Head, Appear } from 'mdx-deck'
 ---
 
 ### Declarative
-React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
-
 Declarative views make your code more predictable and easier to debug.
 
 ---
@@ -41,16 +39,59 @@ Declarative views make your code more predictable and easier to debug.
 ### Component-based
 Build encapsulated components that manage their own state, then compose them to make complex UIs.
 
-Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+---
+
+<img src="./images/single-component.png" />
 
 ---
 
-## JSX-Syntax
-<Appear>
-    <ul>
-        <li>Javascript en templates, in één</li>
-    </ul>
-</Appear>
+<img src="./images/nested-components.png" />
+
+---
+
+## Rendering
+- Componenten doen een rerender wanneer de state (buiten het component) wijzigt.
+- Alleen wanneer de output verandert zal een DOM-update plaatsvinden.
+
+---
+
+## Virtual DOM
+
+<img src="./images/dom.png" />
+
+---
+
+<Image src="./images/virtual-vs-real.png" style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundSize: '100vh'
+}}></Image>
+
+---
+
+<Image src="./images/virtual-dom-change.png" style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundSize: '100vh'
+}}></Image>
+
+---
+
+<Image src="./images/dom-result.png" style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundSize: '100vh'
+}}></Image>
+
+---
+
+## Class vs Functional components (FC)
+- Classes hebben `this`
+- Classes hebben lifecycle methods, FC hebben hooks
+- Iedere class zorgt voor ~ 1kb aan extra transpiled code
 
 ---
 
@@ -67,14 +108,6 @@ Since component logic is written in JavaScript instead of templates, you can eas
 - Prop aanpassen
 - Functie verkleinen
 ```
-
----
-
-## Class vs Functional components (FC)
-- Classes hebben `this`
-- Classes hebben lifecycle methods, FC hebben hooks
-- Iedere class zorgt voor ~ 1kb aan extra transpiled code
-
 
 ---
 
@@ -104,12 +137,6 @@ Since component logic is written in JavaScript instead of templates, you can eas
   title="Functional component, state hook"
   code={require('!raw-loader!./examples/state-hook.js')}
 />
-
----
-
-## Rendering
-- Componenten doen een rerender wanneer de state (buiten het component) wijzigt.
-- Alleen wanneer de output veranderd zal een DOM-update plaatsvinden.
 
 ---
 
